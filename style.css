@@ -1,0 +1,42 @@
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.row {
+  display: flex;
+}
+.cell {
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  border: solid black 2px;
+}
+
+.cell:hover {
+  cursor: pointer;
+}
+
+.living {
+  background-color: black;
+}
+
+.dead {
+  background-color: white;
+}
+
+.grid-marker {
+  position: relative;
+}
+.grid-marker:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  top: -8px;
+  left: -8px;
+  background-color: black;
+  border: solid black 1px;
+  border-radius: 4px;
+}
