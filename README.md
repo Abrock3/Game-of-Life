@@ -1,2 +1,2 @@
 # Game-of-Life
-Just my take on Conway's game of life.
+Just our take on Conway's Game of Life.
