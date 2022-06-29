@@ -39,10 +39,17 @@ function renderGameBoard() {
       } else {
         cell.classList.add("living");
       }
-      //   this determines if the cell is 4 away from x and yTrueZero; this will produce a grid of
-      // periodically spaced elements with this class.
-      if ((yTrueZero - i) % 4 === 0 && (xTrueZero - k) % 4 === 0) {
-        cell.classList.add("grid-marker");
+      //   this determines if the cell is 4 away from xTrueZero and yTrueZero; this will produce a grid of
+      // periodically spaced elements with a span nested in them; we'll style this span to look like a dot.
+      // if the array ends up "moving", this will help the user see that the grid is moving
+      if (
+        (yTrueZero - i) % 4 === 0 &&
+        (xTrueZero - k) % 4 === 0 &&
+        (i !== 0) & (k !== 0)
+      ) {
+        const dot = document.createElement("span");
+        dot.classList.add("grid-marker");
+        cell.append(dot);
       }
       //   adds this cell to the row
       row.append(cell);

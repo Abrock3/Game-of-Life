@@ -7,11 +7,12 @@
 .row {
   display: flex;
 }
+
 .cell {
   width: 30px;
   height: 30px;
   margin: 3px;
-  border: solid black 2px;
+  border: solid black 2px;  position: relative;
 }
 
 .cell:hover {
@@ -27,9 +28,6 @@
 }
 
 .grid-marker {
-  position: relative;
-}
-.grid-marker:after {
   content: "";
   position: absolute;
   height: 4px;
@@ -39,4 +37,8 @@
   background-color: black;
   border: solid black 1px;
   border-radius: 4px;
+}
+
+.grid-marker:hover{
+  cursor:default
 }
