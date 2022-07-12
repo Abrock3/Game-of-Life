@@ -18,7 +18,8 @@ for (let i = 0; i < initialSize; i++) {
 
 function renderGameBoard() {
   // clears the HTML out of the gameContainer so we can recreate it
-  gameContainer.innerHTML = "";
+
+  let gameTable = document.createElement("figure");
   // iterating through main array
   for (let i = 0; i < golArray.length; i++) {
     // creates a div that will hold a row of cells
@@ -54,9 +55,12 @@ function renderGameBoard() {
       //   adds this cell to the row
       row.append(cell);
     }
-    // adds this row to the gameContainer
-    gameContainer.append(row);
+    // adds this row to the gameTable
+    gameTable.append(row);
   }
+  // wipes gameContainer and appends the gameTable to it
+  gameContainer.innerHTML = "";
+  gameContainer.append(gameTable);
 }
 
 // since the cells are generated dynamically; we need to use event delegation to set an event listener on them
